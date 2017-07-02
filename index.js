@@ -36,27 +36,34 @@ function createWindow() {
       // Create the browser window.
       win = new BrowserWindow({fullscreen: settings.fullscreen});
       win.setMenu(null);
-      win.webContents.openDevTools();
+      // win.webContents.openDevTools();
       win.webContents.executeJavaScript(
         `
-          window.__WebTrappRepainter__ = document.createElement('webtrapp-repainter');
-          window.__WebTrappRepainter__.style.boxSizing = 'border-box !important';
-          window.__WebTrappRepainter__.style.position = 'fixed !important';
-          window.__WebTrappRepainter__.style.top = '0 !important';
-          window.__WebTrappRepainter__.style.left = '0 !important';
-          window.__WebTrappRepainter__.style.border = 'none !important';
-          window.__WebTrappRepainter__.style.width = '100vw !important';
-          window.__WebTrappRepainter__.style.height = '100vh !important';
-          window.__WebTrappRepainter__.style.background = 'rgba(0,0,0,0) !important';
-          window.__WebTrappRepainter__.style.boxShadow = 'none !important';
-          window.__WebTrappRepainter__.style.pointerEvents = 'none !important';
+          window.__WebTrappRepainter__ = document.createElement('canvas');
+          window.__WebTrappRepainter__.setAttribute('id', 'webtrapp-repainter');
+          window.__WebTrappRepainter__.setAttribute('width', '1');
+          window.__WebTrappRepainter__.setAttribute('height', '1');
+          window.__WebTrappRepainterContext__ = window.__WebTrappRepainter__.getContext('2d');
+          window.__WebTrappRepainter__.style.setProperty('display', 'block', 'important');
+          window.__WebTrappRepainter__.style.setProperty('box-sizing', 'border-box', 'important');
+          window.__WebTrappRepainter__.style.setProperty('position', 'fixed', 'important');
+          window.__WebTrappRepainter__.style.setProperty('top', '0', 'important');
+          window.__WebTrappRepainter__.style.setProperty('left', '0', 'important');
+          window.__WebTrappRepainter__.style.setProperty('border', 'none', 'important');
+          window.__WebTrappRepainter__.style.setProperty('width', '100vw', 'important');
+          window.__WebTrappRepainter__.style.setProperty('height', '100vh', 'important');
+          window.__WebTrappRepainter__.style.setProperty('background', 'none', 'important');
+          window.__WebTrappRepainter__.style.setProperty('box-shadow', 'none', 'important');
+          window.__WebTrappRepainter__.style.setProperty('z-index', '999999999', 'important');
+          window.__WebTrappRepainter__.style.setProperty('pointer-events', 'none', 'important');
           document.body.appendChild(window.__WebTrappRepainter__);
         `
       );
       repaint = setInterval(()=> {
         win.webContents.executeJavaScript(
-          `window.__WebTrappRepainter__.style.background = 'rgba(255,255,${Math.random()*255|0},0)'`
-          // `console.log(getComputedStyle(document.documentElement).backgroundColor)`
+          `
+            window.__WebTrappRepainterContext__.clearRect(0,0,1,1);
+          `
         );
       }, 16);
 
