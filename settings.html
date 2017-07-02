@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      font-family: sans-serif;
+    }
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    ul {
+      list-style: none;
+    }
+    li {
+      margin: 10px 0;
+    }
+  </style>
+
+  <title>WebTrapp</title>
+</head>
+<body>
+
+  <form id="settings">
+    <ul>
+      <li>
+        <label for="url">URL to load</label>
+        <br />
+        <input id="url" type="url" required="required" />
+      </li>
+      <li>
+        <input id="fullscreen" type="checkbox" />
+        <label for="fullscreen">Run this app in fullscreen</label>
+      </li>
+      <li>
+        <input type="submit" />
+      </li>
+    </ul>
+  </form>
+
+  <script src="renderer.js"></script>
+
+</body>
+</html>
