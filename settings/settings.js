@@ -1,14 +1,13 @@
 const fs = require(`fs`);
 const path = require(`path`);
 const {app, dialog} = require(`electron`).remote;
-document.write();
 
 const [
   elSettings,
   elUrl,
   elFullscreen,
-  elGo
-] = document.querySelectorAll(`#settings, #url, #fullscreen, #go`);
+  elDone
+] = document.querySelectorAll(`#settings, #url, #fullscreen, #done`);
 
 const settings = {};
 
