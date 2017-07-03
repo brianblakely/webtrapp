@@ -6,11 +6,10 @@ You can report bugs and make feature requests [right over here](https://github.c
 
 1. Download WebTrapp: [Windows]() | [Linux]() | [Mac]()
 
-2. Place the WebTrapp executable into its own directory
-   or, if you would like it to share a directory with other files,
-   change the executable's filename.
+2. Extract WebTrapp to where you would like it to live.
+   You may rename the folder and/or the executable, if you like.
 
-3. Open WebTrapp and fill in each setting field (you only need to do this once).
+3. Run WebTrapp and fill in each setting field (you only need to do this once).
 
 ## FAQ
 

@@ -21,13 +21,10 @@ function createWindow() {
     slashes: true
   });
 
-  const loc = app.getPath(`exe`);
   const dir = path.dirname(app.getPath(`exe`));
-  const file = path.basename(loc).replace(path.extname(loc), ``);
-  const configName = file === `webtrapp` ? file : `webtrapp_${file}`;
 
   fs.readFile(
-    path.join(dir, `${configName}.txt`),
+    path.join(dir, `webtrapp.txt`),
 
     (err, data)=> {
       if(!err) {
