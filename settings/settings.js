@@ -5,14 +5,16 @@ const {app, dialog} = require(`electron`).remote;
 const [
   elSettings,
   elUrl,
+  elId,
   elFullscreen,
   elDone
-] = document.querySelectorAll(`#settings, #url, #fullscreen, #done`);
+] = document.querySelectorAll(`#settings, #url, #id, #fullscreen, #done`);
 
 const settings = {};
 
 elSettings.addEventListener(`submit`, ()=> {
   settings.url = elUrl.value;
+  settings.id = elId.value.trim();
   settings.fullscreen = elFullscreen.checked;
 
   const dir = path.dirname(app.getPath(`exe`));

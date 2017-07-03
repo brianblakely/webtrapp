@@ -2,6 +2,9 @@ const win = require(`electron`).remote.getCurrentWindow();
 const webview = document.querySelector(`webview`);
 
 webview.src = win.settings.url;
+if(win.settings.id) {
+  webview.partition = `persist:${win.settings.id}`;
+}
 
 win.on(`app-command`, (e, cmd) => {
   // Navigate the window when the user hits their back/forward button.

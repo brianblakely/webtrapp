@@ -1,5 +1,5 @@
 # WebTrapp
-Run a web app as a local executable.
+Run a Web app as a local executable.
 You can report bugs and make feature requests [right over here](https://github.com/brianblakely/webtrapp/issues).
 
 ## How To Use
@@ -7,7 +7,7 @@ You can report bugs and make feature requests [right over here](https://github.c
 1. Download WebTrapp: [Windows]() | [Linux]() | [Mac]()
 
 2. Extract WebTrapp to where you would like it to live.
-   You may rename the folder and/or the executable, if you like.
+   You may rename the folder and/or the executable.
 
 3. Run WebTrapp and fill in each setting field (you only need to do this once).
 
@@ -28,17 +28,21 @@ No, but you can fork WebTrapp to add extensions for specific Web apps.
 
 * **Can I log into different accounts with different WebTrapp apps?**
 
-As of this writing, all WebTrapp apps use the same local data.
+All WebTrapp apps with the same `App ID`(or a blank one) will use the same user data.
 
 * **How do I clear WebTrapp's local data (cookies, etc)?**
 
-Empty its `Cache` directory, which can be found in the following locations (replace `<user>` with your OS username):
+Delete the `webtrapp` user data directory, which can be found in the following locations
+(replace `<user>` with your OS username):
 
 Windows:
-`C:\Users\<user>\AppData\Roaming\webtrapp\Cache`
+
+`C:\Users\<user>\AppData\Roaming\webtrapp`
 
 Linux:
-`/home/<user>/.config/webtrapp/Cache`
+
+`/home/<user>/.config/webtrapp`
 
 Mac:
-`/Users/<user>/Library/Application Support/webtrapp/Cache`
+
+`/Users/<user>/Library/Application Support/webtrapp`

@@ -35,9 +35,14 @@
   <form id="settings">
     <ul>
       <li>
-        <label for="url">URL to load</label>
+        <label for="url">App URL</label>
         <br />
         <input id="url" type="url" required="required" />
+      </li>
+      <li>
+        <label for="id">App ID (optional) (lowercase alphabetic only)</label>
+        <br />
+        <input id="id" type="text" pattern="[a-z]+" />
       </li>
       <li>
         <input id="fullscreen" type="checkbox" />

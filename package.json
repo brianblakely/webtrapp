@@ -1,7 +1,7 @@
 {
   "name": "webtrapp",
   "version": "1.0.0",
-  "description": "Run a web app as a local executable.",
+  "description": "Run a Web app as a local executable.",
   "main": "main.js",
   "scripts": {
     "start": "electron .",

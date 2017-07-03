@@ -12,6 +12,7 @@ let win;
 function createWindow() {
   const settings = {
     url: ``,
+    id: ``,
     fullscreen: false
   };
 
