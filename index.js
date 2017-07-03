@@ -31,12 +31,19 @@ function createWindow() {
         settings.fullscreen = false;
       } else {
         settings = JSON.parse(data);
+        settings.url = url.format({
+          pathname: path.join(__dirname, `index.html`),
+          protocol: `file:`,
+          slashes: true
+        });
       }
 
       // Create the browser window.
-      win = new BrowserWindow({fullscreen: settings.fullscreen});
+      win = new BrowserWindow({
+        fullscreen: settings.fullscreen
+      });
       win.setMenu(null);
-      // win.webContents.openDevTools();
+      win.webContents.openDevTools();
       win.webContents.executeJavaScript(
         `
           window.__WebTrappRepainter__ = document.createElement('canvas');
