@@ -1,0 +1,30 @@
+{
+  "name": "webtrapp",
+  "productName": "WebTrapp",
+  "version": "1.0.0",
+  "description": "Run a Web app as a local executable.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "npm run package-win && npm run package-lin && npm run package-mac",
+    "package-win": "electron-packager . --out=../dist --icon=icons/icon.ico --platform=win32 --arch=all --prune=true --overwrite",
+    "package-lin": "",
+    "package-mac": "",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brianblakely/webtrapp.git"
+  },
+  "author": "Brian Blakely",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/brianblakely/webtrapp/issues"
+  },
+  "homepage": "https://github.com/brianblakely/webtrapp#readme",
+  "devDependencies": {
+    "electron": "^1.6.11",
+    "electron-packager": "^8.7.2"
+  },
+  "false": {}
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      font-family: sans-serif;
+    }
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    ul {
+      list-style: none;
+    }
+    li {
+      margin: 10px 0;
+    }
+    #url {
+      width: 50vw;
+    }
+  </style>
+
+  <title>WebTrapp Settings</title>
+</head>
+<body>
+
+  <form id="settings">
+    <ul>
+      <li>
+        <label for="url">App URL</label>
+        <br />
+        <input id="url" type="url" required="required" />
+      </li>
+      <li>
+        <label for="id">App ID (optional) (lowercase alphabetic only)</label>
+        <br />
+        <input id="id" type="text" pattern="[a-z]+" />
+      </li>
+      <li>
+        <input id="fullscreen" type="checkbox" />
+        <label for="fullscreen">Run this app in fullscreen</label>
+      </li>
+      <li>
+        <input id="done" type="submit" value="Done" />
+      </li>
+    </ul>
+  </form>
+
+  <script src="settings.js"></script>
+
+</body>
+</html>
