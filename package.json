@@ -3,14 +3,16 @@
   "productName": "WebTrapp",
   "version": "1.0.0",
   "description": "Run a Web app as a local executable.",
-  "main": "main.js",
+  "main": "src/main.js",
   "scripts": {
     "start": "electron .",
-    "build": "npm run package-win && npm run package-lin && npm run package-mac",
-    "package-win": "electron-packager . --out=../dist --icon=icons/icon.ico --platform=win32 --arch=ia32 --prune=true --overwrite",
-    "package-lin": "electron-packager . --out=../dist --icon=icons/png/1024x1024.png --platform=linux --arch=all --prune=true --overwrite",
-    "package-mac": "electron-packager . --out=../dist --icon=icons/icon.icns --platform=darwin --arch=x64 --prune=true --overwrite",
+    "build": "electron-builder",
+    "build-test": "electron-builder --dir",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "build": {
+    "appId": "com.electron.webtrapp",
+    "productName": "WebTrapp"
   },
   "repository": {
     "type": "git",
